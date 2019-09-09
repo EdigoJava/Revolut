@@ -1,0 +1,124 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.revolut</groupId>
+  <artifactId>moneytransferservice</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>moneytransferservice Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  
+      <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+          <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+  </properties>
+   
+	<dependencies>
+	<dependency>
+  <groupId>junit</groupId>
+  <artifactId>junit</artifactId>
+  <version>4.11</version>
+  <scope>test</scope>
+</dependency>
+
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-api</artifactId>
+    <version>5.0.0-M5</version>
+    <scope>test</scope>
+</dependency>
+		<!-- For Jersey 1.x -->
+<!-- 		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-server</artifactId>
+			<version>1.19</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-servlet</artifactId>
+			<version>1.19</version>
+		</dependency> -->
+		<!-- For Jersey 2.x -->
+		<dependency>
+			<groupId>org.glassfish.jersey.core</groupId>
+			<artifactId>jersey-server</artifactId>
+			<version>2.27</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.mockito</groupId>
+		    <artifactId>mockito-all</artifactId>
+		    <version>1.9.5</version>
+		    <scope>test</scope>
+	   </dependency>
+	   
+	   <dependency>
+  <groupId>org.glassfish.jersey.bundles.repackaged</groupId>
+  <artifactId>jersey-guava</artifactId>
+  <version>2.6</version>
+</dependency>
+	   
+	   <dependency>
+    <groupId>org.glassfish.jersey.test-framework.providers</groupId>
+    <artifactId>jersey-test-framework-provider-jdk-http</artifactId>
+    <version>2.22.1</version>
+</dependency>
+		
+		
+		<dependency>
+	    <groupId>com.sun.jersey</groupId>
+		    <artifactId>jersey-json</artifactId>
+		    <version>1.9</version>
+		</dependency>
+		
+		<dependency>
+		  <groupId>org.glassfish.jersey.media</groupId>
+		  <artifactId>jersey-media-json-jackson</artifactId>
+		  <version>2.27</version>
+       </dependency>
+		
+		<dependency>
+			<groupId>org.glassfish.jersey.containers</groupId>
+			<artifactId>jersey-container-servlet</artifactId>
+			<version>2.27</version>
+		</dependency>
+		
+			
+		<dependency>
+    <groupId>org.glassfish.jersey.containers</groupId>
+    <artifactId>jersey-container-grizzly2-http</artifactId>
+    <version>2.27</version>
+</dependency>
+		
+		<dependency>
+			<groupId>org.glassfish.jersey.inject</groupId>
+			<artifactId>jersey-hk2</artifactId>
+			<version>2.27</version>
+		</dependency>
+		
+		<dependency>
+		   <groupId>org.hibernate</groupId>
+		   <artifactId>hibernate-core</artifactId>
+		   <version>5.2.10.Final</version>
+      </dependency>
+
+	   <dependency>
+		   <groupId>com.h2database</groupId>
+		   <artifactId>h2</artifactId>
+		   <version>1.4.193</version>
+	   </dependency>
+	   
+	   <dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>javax.servlet-api</artifactId>
+    <version>3.0.1</version>
+    <scope>provided</scope>
+</dependency>
+		
+	</dependencies>
+	<build>
+		<finalName>moneytransferservice</finalName>
+	</build>
+	
+</project>

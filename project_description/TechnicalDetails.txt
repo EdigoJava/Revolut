@@ -1,0 +1,30 @@
+CONCURRENCY APPROACH
+
+-I make the TransferService class thread-safe double check singelton class and 
+make the makeTransfer method synchorized which makes this method thread-safe. Therefore only 1 thread can call this method in the same time.
+
+-I thought that it is not enough because maybe some other services or resources can persist data into database so I use the pessimistic locking
+approach in the repository class while managing transaction. With these no other source can persist data to Account entity while transaction on process.
+
+-I close the all EntityManager connections in all exception or after the transaction. I roll back all the transaction in all exception.
+With this I prevent the dead lock occurance in locking.
+
+-I also defined lock time out in the persistnce.xml this is for preventing dead lock occurunce.
+
+USED TECHNOLOGIES
+
+Java 8 for JDK and programming language
+
+Jersey-2.27 for Restful services
+
+Jersey Test 2.22.1 for API Testing
+
+JPA for ORM (I added Hibernate library but didn't use it)
+
+H2 for In memory Database
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+Please look for the other documents for api,class and test information.
+
+Regards,
+Ozan

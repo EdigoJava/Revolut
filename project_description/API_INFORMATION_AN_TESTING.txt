@@ -1,0 +1,65 @@
+Warning !!! 
+AccountController. is not for the project requriement. 
+I developed it for the Revolut Technical Decision Makers for testing the actual(Transfer) service easier via api.
+For this reason I didn't implement any service, repository or validation class for it.
+!!! Warning 
+
+
+AccountController.java
+
+SAVE ACCOUNT :
+
+End Point:
+
+http://localhost:8080/moneytransferservice/api/accounts/saveaccount
+
+Sample JSON Object:
+
+{"firstName":"Ozan","surName":"Eren","currency":"GBP","balance":"150"}
+
+GET ALL ACCOUNTS
+
+End Point:
+
+http://localhost:8080/moneytransferservice/api/accounts
+
+GET ACCOUNT BY ID
+
+http://localhost:8080/moneytransferservice/api/accounts/{id}
+
+Sample Request:
+
+http://localhost:8080/moneytransferservice/api/accounts/1
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+TransferController.java
+
+MAKE TRANSFER :
+
+End Point :
+
+http://localhost:8080/moneytransferservice/api/transfers/maketransfer
+
+Sample JSON Object:
+
+{"transferAmount":"50","fromAccID":"1","toAccID":"2"}
+
+GET ALL TRANSFERS
+
+http://localhost:8080/moneytransferservice/api/transfers
+
+GET TRANSFER BY ID
+
+http://localhost:8080/moneytransferservice/api/transfers/{id}
+
+Sample Request:
+
+http://localhost:8080/moneytransferservice/api/transfers/1
+
+------TEST VIA API----------------------------------------------------------------------------------------------
+
+Create at least 2 account with "saveaccount" api and then make money transfer with "maketransfer" api.
+
+-----------TEST WITH JUNIT----------------------------------------------------------
+Please see the test classes in the project.
+

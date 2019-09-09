@@ -1,0 +1,79 @@
+Controller:
+
+AccountController.java
+- Basic Jersey controller api's.
+- Created for testing the transfer service easily via api.
+- For this reason I didn't implement repository and exception handling or any service layer.
+
+TransferController.java
+
+- Basic Jersey controller api's.
+- Jackson mapping for JSON mapping into Response
+- Call singelton service layer in this controller.
+- Make sure never return stack trace to client and all excepitons are localized
+---------------------------------------------------------------------------------------------------------------------
+Repository:
+
+PersistenceAppListener.java
+
+- Context listener when server start-up.
+- Create EntityManagerFactory as singelton when starting up.
+- Destroy EntityManagerFactory when server is closing.
+
+PersistenceManager.java
+- Singelton implentation of EntityManagerFactory
+
+
+TransferRepository.java
+- Impl of money transfer transaction and CRUD operation into DB
+- All conection are cloesed in everywhere after finished.
+- Roll back scenarios are implemented
+- All excepitons are localized for the client
+
+-------------------------------------------------------------------------------------------------------------------------
+
+Entiy:
+
+Account.java
+- Basic JPA entity
+
+Transfer.java
+- Basic JPA entity
+
+---------------------------------------------------------------------------------------------------------------------------
+Service:
+
+TransferService.java
+- Thread safe double check singelton service class for handling client operation
+---------------------------------------------------------------------------------------------------------------------------
+Validator:
+
+TransferValidator.java
+
+- It is a validaton class for Transfer request before sending into server and static exception messages 
+-----------------------------------------------------------------------------------------------------------------------
+Test:
+
+MoneyTransferServiceIntegrationTest.java
+
+- Integration tests for JPA and Rest opeartaions.
+
+JPA Tests:
+
+- Create Accounts and persist them into DB then make transfer. After the test delete the accounts.
+
+When deleting accoun entites H2 doesn't delete primary key sequence.
+
+I use the get entitey by find method with primary key id. So that I update for entite's primary key by "1" and "2" to find them easily.
+
+In JPA tests I tried to cover all failng scenarios.
+
+Resful Tests:
+
+- I use the Jersey test framework and I created and start http service of this framework.
+
+I try to cover all rest api scenarios and failing scenarios in these tests.
+
+I haven't written any tests for AccountController api's because it is not on the project requirment.
+
+
